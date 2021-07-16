@@ -1,62 +1,41 @@
 # Price-feed App
 
-\*\* Build your own solidity-react app boilerplate
+## Details
+This app builds and deploys a solidity contract based on Chainlink Price Feeds then displays this data on a NextJS react frontend.
 
-Req's
 
-Nodejs   
-Infura account. 
-Truffle. 
+## **Framework**
+
+**Contracts**: [Truffle](https://www.trufflesuite.com/truffle), Solidity, Infura, [Metamask](https://docs.metamask.io/guide/), [Chainlink](https://docs.chain.link/docs) for Price Feeds
+
+**Front-end**: React, [Next](https://nextjs.org/) (routing, SSR), [Web3](https://web3js.readthedocs.io/en/v1.3.4/).
+
+**Other npm libs**: @truffle/hdwallet-provider, dotenv
+
+## **Requirements/Dependencies**
+[Node js](https://nodejs.org/en/). 
+[Infura Account](https://infura.io/register) => [Set up guide](https://blog.infura.io/getting-started-with-infura-28e41844cc89/). 
+[Metamask Wallet](https://metamask.io/) => NB: USE A FRESH WALLET WITH NO REAL VALUABLE ASSETS ON IT (test only) AND KEEP YOUR SEED PHRASE HANDY (we need this to deploy the solidity contracts). 
+[Truffle](https://www.trufflesuite.com/truffle) => install using npm command. 
 > npm install -g truffle
 
-App
+## **Running the App**
 
-> npx create-next-app. 
-> cd [app-name]. 
-> truffle init. 
-> npm install dotenv @truffle/hdwallet-provider web3 mocha @chainlink/contracts. 
-> touch .env. 
-
-Add .env to .gitignore file. 
-Add your network and solc compiler to truffle-config. 
-Add your contracts. 
-Edit the deploy-migrations script. 
-
-Run truffle
-
-> truffle compile. 
-> truffle migrate --network rinkeby. 
-
-Put deployed contract address in .env file. 
-Add a web3.js file and contracts folder under pages/api (see the file) - you could also use ethers.js. 
-Add contracts to your contracts folder. 
-eg.  
-```import web3 from "../web3";  
-import PriceConsumerV3 from "../../../build/contracts/PriceConsumerV3.json";  
-
-const address = process.env.NEXT_PUBLIC_DEPLOYED_CONTRACT_ADDRESS;
-const instance = new web3.eth.Contract(PriceConsumerV3.abi, address);
-export default instance; //entry point to your contracts
-```
-
-Fund your contract with Link (from your wallet to deployed contract address - 1 Link is fine)
-
-\*\* Framework
-Solidity
-Truffle -> Rinkeby testnet
-Chainlink
-Next
-React
-Web3
-
-\*\* Details
-Basic app consuming Chainlink price feeds
+1. Clone the repo `git clone `
+2. Create a .env file `> touch .env`
+3. Fill in the .env file with the Infura address and the Metamask seed phrase (as per the .example.env file)
+4. Install dependencies `npm install`
+5. Deploy the contracts `truffle migrate --network rinkeby`
+6. Add the deployed contracts address to the .env file
+7. Run the front-end `npm run dev`
+8. Navigate to [http://localhost:3000](http://localhost:3000/) to see the price feed app in action
 
 
 
 
 
-## Next-js Readme
+
+## See the Next-js docs below
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
