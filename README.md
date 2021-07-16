@@ -4,39 +4,40 @@
 
 Req's
 
-Nodejs  
-Truffle
-
+Nodejs   
+Infura account. 
+Truffle. 
 > npm install -g truffle
 
 App
 
-> npx create-next-app
-> cd [app-name]
-> truffle init
-> npm install dotenv @truffle/hdwallet-provider web3 mocha @chainlink/contracts
-> touch .env
+> npx create-next-app. 
+> cd [app-name]. 
+> truffle init. 
+> npm install dotenv @truffle/hdwallet-provider web3 mocha @chainlink/contracts. 
+> touch .env. 
 
-Add .env to .gitignore file
-Add your network and solc compiler to truffle-config
-Add your contracts
-Edit the deploy-migrations script
+Add .env to .gitignore file. 
+Add your network and solc compiler to truffle-config. 
+Add your contracts. 
+Edit the deploy-migrations script. 
 
 Run truffle
 
-> truffle compile
-> truffle migrate --network rinkeby
+> truffle compile. 
+> truffle migrate --network rinkeby. 
 
-Put deployed contract address in .env file
-Add a web3.js file and contracts folder under pages/api (see the file) - you could also use ethers.js
-Add contracts to your contracts folder
-eg.
-import web3 from "../web3";
-import PriceConsumerV3 from "../../../build/contracts/PriceConsumerV3.json";
+Put deployed contract address in .env file. 
+Add a web3.js file and contracts folder under pages/api (see the file) - you could also use ethers.js. 
+Add contracts to your contracts folder. 
+eg.  
+```import web3 from "../web3";  
+import PriceConsumerV3 from "../../../build/contracts/PriceConsumerV3.json";  
 
 const address = process.env.NEXT_PUBLIC_DEPLOYED_CONTRACT_ADDRESS;
 const instance = new web3.eth.Contract(PriceConsumerV3.abi, address);
 export default instance; //entry point to your contracts
+```
 
 Fund your contract with Link (from your wallet to deployed contract address - 1 Link is fine)
 
@@ -50,6 +51,10 @@ Web3
 
 \*\* Details
 Basic app consuming Chainlink price feeds
+
+
+
+
 
 ## Next-js Readme
 
