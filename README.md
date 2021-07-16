@@ -1,5 +1,14 @@
 # Price-feed App
 
+NB:
+
+
+There is an updated version of this repo [here](https://github.com/DeveloperAlly/brisjs.git)
+
+
+
+
+
 ![image (3)](https://user-images.githubusercontent.com/12529822/125950175-543ccd79-9a2f-4459-9eca-91f34e8c4235.png)
 
 ## Details
